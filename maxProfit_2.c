@@ -13,10 +13,10 @@ int maxProfit(int* prices, int pricesSize)
 	}
 	int sum = 0;
 	int sub = 0;
-	for (int i = 1; i<pricesSize; i++)
+	for (int i = 1; i<pricesSize; i++) //低价买入，高价卖出
 	{
 		sub = prices[i] - prices[i - 1];
-		if (sub > 0)
+		if (sub > 0) //反向差价大于0，便可计入总利润中
 		{
 			sum += sub;
 		}
@@ -29,7 +29,7 @@ int main()
 	int prices[] = { 7, 1, 5, 3, 6, 4 };
 	int size = sizeof(prices) / sizeof(prices[0]);
 	int profit = maxProfit(prices, size);
-	printf("Profit��%d\n", profit);
+	printf("Profit：%d\n", profit);
 	system("pause");
 	return 0;
 }
